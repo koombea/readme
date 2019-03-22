@@ -2,7 +2,7 @@
 
 The repository setup that we use and that works well with this branching model, is that with a central “truth” repo. We will refer to this repo as origin, since this name is familiar to all Git users.
 
-<img src="images/image1.png" width="500">
+<img src="images/centr-decentr@2x.png" width="974">
 
 Each developer pulls and pushes to origin. But besides the centralized push-pull relationships, each developer may also pull changes from other peers to form sub teams. For example, this might be useful to work together with two or more developers on a big new feature, before pushing the work in progress to origin prematurely.
 
@@ -42,7 +42,7 @@ Feature branches (or sometimes called topic branches) are used to develop new fe
 
 Finished features may be merged into the develop branch after the Pull request is approved. 
 
-<img src="images/image1.png" width="500">
+<img src="images/merge-without-ff@2x.png" width="478">
 
 #### Release branches (Only for UAT environments)
 
@@ -66,7 +66,7 @@ Branch naming convention: `hotfix/*`
 
 They arise from the necessity to act immediately upon an undesired state of a live production version. When a critical bug in a production version must be resolved immediately, a hotfix branch may be branched off from the corresponding tag on the master branch that marks the production version.
 
-<img src="images/image1.png" width="500">
+<img src="images/hotfix-branches@2x.png" width="316">
 
 When finished, the bugfix needs to be merged back into master, but also needs to be merged back into develop, in order to safeguard that the bugfix is included in the next release as well. In order to merge the changes into master and develop you have to create 2 pull request, one for master and the other one to develop.
 
