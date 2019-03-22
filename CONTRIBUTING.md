@@ -2,7 +2,7 @@
 
 The repository setup that we use and that works well with this branching model, is that with a central “truth” repo. We will refer to this repo as origin, since this name is familiar to all Git users.
 
-<img src="images/centr-decentr@2x.png" width="974">
+<img src="images/centr-decentr@2x.png" width="487">
 
 Each developer pulls and pushes to origin. But besides the centralized push-pull relationships, each developer may also pull changes from other peers to form sub teams. For example, this might be useful to work together with two or more developers on a big new feature, before pushing the work in progress to origin prematurely.
 
