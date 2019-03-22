@@ -14,7 +14,7 @@ This document is a template for README files of any Koombea project. Please use 
 
 ## Contributing
 
-The master branch of this repository contains the latest stable source code for the production environment.
+The `master` branch of this repository contains the latest stable source code for the production environment. This branch and the `develop` branch are protected to prevent those from being accidentally deleted. Force pushes are also disabled to enforce following the guidelines of the [Releasing](#releasing) section.
 
 Please follow this steps for submitting any changes:
 
