@@ -22,6 +22,10 @@ Please follow this steps for submitting any changes:
 2. Make sure you include tests for your changes.
 3. When the feature is complete, create a pull request to the develop branch.
 
+### Checklist
+
+Add the [PULL_REQUEST_TEMPLATE](PULL_REQUEST_TEMPLATE.md) to your repo to use it as a template for every pull request.
+
 ### Continuous Integration
 
 When a pull requests is submitted to the `develop` branch the CI service will automatically run the tests and generate a new build for testing. A message will be posted to the team's slack channel.
@@ -39,10 +43,6 @@ All releases to the main branches (`master` and `develop`) must be code reviewed
 5. The _QA Analyst_ must do a full regression test of the production environment to make sure the new changes did not affect any other functionality.
 
 NOTE: Each pull request must include the following checklist:
-
-### Checklist
-
-Add the [PULL_REQUEST_TEMPLATE](PULL_REQUEST_TEMPLATE.md) to your repo to use it as a template for every pull request.
 
 ### Continuous Integration
 
