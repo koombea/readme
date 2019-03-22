@@ -42,7 +42,7 @@ NOTE: Each pull request must include the following checklist:
 
 ### Checklist
 
-- TBD
+Add the [PULL_REQUEST_TEMPLATE](PULL_REQUEST_TEMPLATE.md) to your repo to use it as a template for every pull request.
 
 ### Continuous Integration
 
