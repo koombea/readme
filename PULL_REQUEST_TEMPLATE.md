@@ -8,5 +8,6 @@ Changes proposed in this pull request:
 - [ ] Ensure you have written good tests :heart:
 - [ ] Request reviewers (they would love to see your code :policeman:)
 - [ ] Use labels (if applicable)
+- [ ] Add seeds (if applicable)
 ---
 If you need further information, please check the JIRA ticket [NUMBER HERE](LINK HERE) or feel free to contact me.
