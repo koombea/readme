@@ -1,6 +1,4 @@
-<!-- The following format makes it easier to get some context when reading the names of issues -->
-`NAMING YOUR PULL REQUEST: Pull request should be named the same as ticket title with the ticket number. Ideally, pull request will have a name like this: [XXXX] My ticket title`
-<!-- remove the line above -->
+<!-- `NAMING YOUR PULL REQUEST: Pull request should be named the same as ticket title with the ticket number. Ideally, pull request will have a name like this: [XXXX] My ticket title` -->
 
 ## Description
 
@@ -29,7 +27,7 @@ If you need further information, please check the JIRA ticket [NUMBER HERE](LINK
 - [ ] New and existing unit tests pass locally with my changes
 - [ ] Any dependent changes have been merged or rebased
 - [ ] Request reviewers (they would love to see your code :policeman:)
-- [ ] Use labels (if applicable)
+- [ ] Use labels (if applicable) <!-- ie: `migration`, `rake-task`, `hotfix` -->
 - [ ] Add seeds (if applicable)
 
 ## Screenshots or GIF (if appropriate) <!-- remove this item if the changes only affects the backend -->
@@ -38,10 +36,14 @@ If you need further information, please check the JIRA ticket [NUMBER HERE](LINK
 
 ## QA/Deploy notes (if applicable)
 
-#### Database changes
-
 #### Deployment instructions
+
+<!-- ie. `rake populate:users` -->
 
 #### New ENV variables
 
+<!-- ie. `AWS_S3_REGION`, `AWS_S3_ACCESS_KEY`, `AWS_S3_ACCESS_SECRET`, `AWS_S3_BUCKET_NAME` -->
+
 #### New/Updated/Removed endpoints (if applicable)
+
+<!-- ie. `GET /api/v1/users/:id` -->
