@@ -1,13 +1,46 @@
-Changes proposed in this pull request:
----------------------------------------
-- Add a good description of your work.
-- You can use these bullets to summarize what you have done.
----
-- [ ] Add/Update documentation related to the changes
-- [ ] Assign the pull request to yourself and others that have worked with you
-- [ ] Ensure you have written good tests :heart:
+<!-- The following format makes it easier to get some context when reading the names of issues -->
+`NAMING YOUR PULL REQUEST: Pull request should be named the same as ticket title with the ticket number. Ideally, pull request will have a name like this: [XXXX] My ticket title`
+<!-- remove the line above -->
+
+## Description
+
+<!-- replace the following instruction -->
+_Please include a summary of the change and which issue is fixed. Please also include relevant motivation and context. List any dependencies that are required for this change._
+
+If you need further information, please check the JIRA ticket [NUMBER HERE](LINK HERE) or feel free to contact me.
+
+## Type of change
+
+- [ ] Bug fix (non-breaking change which fixes an issue)
+- [ ] New feature (non-breaking change which adds functionality)
+- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
+- [ ] This change requires a documentation update
+
+## Checklist
+
+- [ ] Rubocop applied <!-- remove this item if it is NOT a rails project -->
+- [ ] Rails best practices applied <!-- remove this item if it is NOT a rails project -->
+- [ ] My code follows the style guidelines of this project
+- [ ] I have performed a self-review of my own code
+- [ ] I have commented my code, particularly in hard-to-understand areas
+- [ ] I have made corresponding changes to the documentation
+- [ ] My changes generate no new warnings
+- [ ] I have added tests/specs that prove my fix is effective or that my feature works
+- [ ] New and existing unit tests pass locally with my changes
+- [ ] Any dependent changes have been merged or rebased
 - [ ] Request reviewers (they would love to see your code :policeman:)
 - [ ] Use labels (if applicable)
 - [ ] Add seeds (if applicable)
+
+## Screenshots or GIF (if appropriate) <!-- remove this item if the changes only affects the backend -->
+
 ---
-If you need further information, please check the JIRA ticket [NUMBER HERE](LINK HERE) or feel free to contact me.
+
+## QA/Deploy notes (if applicable)
+
+#### Database changes
+
+#### Deployment instructions
+
+#### New ENV variables
+
