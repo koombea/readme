@@ -44,3 +44,4 @@ If you need further information, please check the JIRA ticket [NUMBER HERE](LINK
 
 #### New ENV variables
 
+#### New/Updated/Removed endpoints (if applicable)
