@@ -21,10 +21,10 @@ If you need further information, please check the JIRA ticket [NUMBER HERE](LINK
 - [ ] My code follows the style guidelines of this project
 - [ ] I have performed a self-review of my own code
 - [ ] I have commented my code, particularly in hard-to-understand areas
-- [ ] I have made corresponding changes to the documentation
+- [ ] I have made corresponding changes to the documentation <!-- ie. apiary, swagger, etc -->
 - [ ] My changes generate no new warnings
 - [ ] I have added tests/specs that prove my fix is effective or that my feature works
-- [ ] New and existing unit tests pass locally with my changes
+- [ ] New and existing tests/specs pass locally with my changes
 - [ ] Any dependent changes have been merged or rebased
 - [ ] Request reviewers (they would love to see your code :policeman:)
 - [ ] Use labels (if applicable) <!-- ie: `migration`, `rake-task`, `hotfix` -->
