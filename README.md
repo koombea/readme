@@ -10,6 +10,17 @@ This document is a template for README files of any Koombea project. Please use 
 
 ## Best Practices
 
+## Environments
+
+### Production
+[Add a link and a description of this environment]: text
+
+### UAT
+[Add a link and a description of this environment]: text
+
+### Staging
+[Add a link and a description of this environment]: text
+
 ## Troubleshooting
 
 ## Contributing
