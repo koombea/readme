@@ -22,6 +22,7 @@ This document is a template for README files of any Koombea project. Please use 
 [Add a link and a description of this environment]: text
 
 ## Troubleshooting
+[List and describe steps to help solving any known issue (E.g: Rollbacks, Certificates issues, etc).]: text
 
 ## Contributing
 
@@ -66,4 +67,4 @@ For more information, see our [RELEASING](RELEASING.md) guide.
 
 ## License
 
-Copyright © 2019 Koombea®. All rights reserved.
+Copyright © 2022 Koombea®. All rights reserved.
