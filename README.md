@@ -6,6 +6,7 @@ This document is a template for README files of any Koombea project. Please use 
 
 ## Getting Started
 [Include Proejct Tech Stack here]: text
+[Include how to access logs]: text
 
 ## Installation
 
