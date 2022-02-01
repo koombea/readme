@@ -5,6 +5,7 @@
 This document is a template for README files of any Koombea project. Please use this as to enforce the project guidelines and conventions, as well as any other development process of the team.
 
 ## Getting Started
+[Include Proejct Tech Stack here]: text
 
 ## Installation
 
