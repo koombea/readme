@@ -8,7 +8,7 @@ This document is a template for README files of any Koombea project. Please use 
 
 ## Installation
 
-## Best Practices
+## Conventions
 
 ## Environments
 
