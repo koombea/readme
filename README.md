@@ -5,7 +5,7 @@
 This document is a template for README files of any Koombea project. Please use this as to enforce the project guidelines and conventions, as well as any other development process of the team.
 
 ## Getting Started
-[Include Proejct Tech Stack here]: text
+[Include Project Tech Stack here]: text
 [Include how to access logs]: text
 
 ## Installation
@@ -66,6 +66,13 @@ When a change is merged into the `master` branch the CI service will automatical
 
 
 For more information, see our [RELEASING](RELEASING.md) guide.
+
+
+## Known Issues
+
+[Include Jira filter link that matches to the repo type. Example: https://koombea.atlassian.net/browse/TH-990?filter=10573]: text
+
+Add the [JIRA_FILTER_LINK]
 
 ## License
 
