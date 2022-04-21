@@ -20,7 +20,7 @@
 
 The apps are linked to 2 iOS modules which contains the core business logic and reusable UI components:
 
-<img src="images/architecture@2x.png" width="500">
+<img src="images/multi-app@2x.png" width="500">
 
 #### Core
 iOS framework for main business logic. Its main purpose is to reuse common code between the iOS apps related to:
