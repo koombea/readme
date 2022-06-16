@@ -66,7 +66,7 @@ As a best practice follow these guidelines:
 2. Follow Ray Wenderlich's [Swift Style Guide](https://github.com/raywenderlich/swift-style-guide) for coding style.
 3. Use [SwiftLint](https://github.com/realm/SwiftLint) to enforce the project's Swift style and conventions.conventions. This requires a binary to be installed in your machine. See more [here](https://github.com/realm/SwiftLint/blob/master/README.md#installation) for installation instructions.
 4. Use [semantic versioning](https://semver.org) for any beta or production releases.
-5. Use Git Flow as your git workflow and branch naming convention. For more information, see our [contributing](CONTRIBUTING.md) guide.
+5. Use Git Flow as your git workflow and branch naming convention. For more information, see our [contributing](../CONTRIBUTING.md) guide.
 
 ## Environments
 
@@ -110,13 +110,7 @@ To be able to run the apps on devices directly from Xcode you will need a develo
 
 ## Contributing
 
-The `main` branch of this repository contains the latest stable source code for the production environment. This branch and the `develop` branch are protected to prevent those from being accidentally deleted. Force pushes are also disabled to enforce following the process described in the [Releasing](#releasing) section.
-
-Please follow this steps for submitting any changes:
-
-1. Create a new branch for any new feature.
-2. Make sure you include tests for your changes.
-3. When the feature is complete, create a pull request to the develop branch.
+Use Git Flow as your git workflow and branch naming convention. For more information, see our [contributing](../CONTRIBUTING.md) guide.
 
 ### Continuous Integration
 
