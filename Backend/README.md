@@ -40,7 +40,7 @@ Please follow this steps for submitting any changes:
 
 When a pull requests is submitted to the `develop` branch the CI service will automatically run the tests and generate a new build for testing. A message will be posted to the team's slack channel.
 
-For more information, see our [CONTRIBUTING](CONTRIBUTING.md) guide.
+For more information, see our [CONTRIBUTING](../Shared/CONTRIBUTING.md) guide.
 
 ## Releasing
 

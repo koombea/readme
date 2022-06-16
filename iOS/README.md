@@ -110,7 +110,13 @@ To be able to run the apps on devices directly from Xcode you will need a develo
 
 ## Contributing
 
-Use Git Flow as your git workflow and branch naming convention. For more information, see our [contributing](../Shared/CONTRIBUTING.md) guide.
+The master branch of this repository contains the latest stable source code for the production environment. This branch and the develop branch are protected to prevent those from being accidentally deleted. Force pushes are also disabled to enforce following the process described in the Releasing section.
+
+Please follow this steps for submitting any changes:
+
+Create a new branch for any new feature.
+Make sure you include tests for your changes.
+When the feature is complete, create a pull request to the develop branch.
 
 ### Continuous Integration
 
@@ -126,6 +132,8 @@ Bitrise workflow scripts will look for some keywords into the commit message to 
 `App2Keyword:` or `[app-2-tag]`
 
 After a build is generated of fail, a message will be posted to the team's slack channel.
+
+For more information, see our [contributing](../Shared/CONTRIBUTING.md) guide.
 
 ## Releasing
 
