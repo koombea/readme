@@ -1,77 +1,146 @@
-## Git Branching and Release Strategy
+# Branching Strategy
 
-The repository setup that we use and that works well with this branching model, is that with a central “truth” repo. We will refer to this repo as origin, since this name is familiar to all Git users.
+## Main Branches
 
-<img src="images/centr-decentr@2x.png" width="487">
+The main repository will always hold two evergreen branches:
 
-Each developer pulls and pushes to origin. But besides the centralized push-pull relationships, each developer may also pull changes from other peers to form sub teams. For example, this might be useful to work together with two or more developers on a big new feature, before pushing the work in progress to origin prematurely.
+* `main` (production)
+* `develop` (next release/trunk)
 
-### Main branches
+The main branch should be considered `origin/develop` and will be the main branch where the source code always reflects a state with the latest delivered development changes for the next release.
 
-The central repo holds two main branches with an infinite lifetime:
+Consider `origin/main` to always represent the latest code deployed to production. During day to day development, you, as a developer, won't interact with this branch.
 
-- master
-- develop
+## Supporting Branches
 
-The master branch at origin should be familiar to every Git user. Parallel to the master branch, another branch exists called develop.
-We consider origin/master to be the main branch where the source code of HEAD always reflects a production-ready state.
-
-We consider `origin/develop` to be the main branch where the source code of HEAD always reflects a state with the latest delivered development changes for the next release. Some would call this the “integration branch”. 
-
-When the source code in the develop branch reaches a stable point and is ready to be released, all of the changes should be merged back into master somehow and then tagged with a release number.
-
-Therefore, each time when changes are merged back into master, this is a new production release by definition.
-
-### Supporting branches
+Supporting branches are used to help in collaboration between team members, to ease tracking of features, and to assist in bug fixing.  Unlike the main branches, these branches always have a limited life time and will be removed eventually.
 
 The different types of branches we may use are:
 
-- Feature branches
-- Release branches
-- Hotfix branches
+* `Feature branches`
+* `Bugfix branches`
+* `Hotfix branches`
+* `Release branches`
+* `Release fix branches`
 
-Each of these branches have a specific purpose and are bound to strict rules as to which branches may be their originating branch and which branches must be their merge targets.
+***
 
-#### Feature branches
-
-May branch off from: develop
-Must merge back into: develop
-Branch naming convention: `feature/<card_number>-*`
+## Working with Feature Branches
 
 Feature branches (or sometimes called topic branches) are used to develop new features for the upcoming or a distant future release. The essence of a feature branch is that it exists as long as the feature is in development, but will eventually be merged back into develop through a pull request.
 
-Finished features may be merged into the develop branch after the Pull request is approved. 
+During the lifespan of the feature development, you should watch the `develop` branch to see if there has been new commits since the feature was branched out. Make sure all changes in `develop` branch are merged into the `feature` branch before merging it back.
 
-<img src="images/merge-without-ff@2x.png" width="478">
+Feature branches should never interact directly with `main`.
 
-#### Release branches (Only for UAT environments)
+**Best Practices:**
 
-May branch off from: develop
-Must merge back into: develop and master
-Branch naming convention: `release/<version>`
+* May branch off: develop
+* Must merge back into: develop
+* Branch naming convention: feature/[Issue TrackerId]/[short-description-of-the-task]
 
-Release branches support preparation of a new production release. They allow for minor bug fixes and preparing meta-data for a release (version number, build dates, etc.). By doing all of this work on a release branch, the develop branch is cleared to receive features for the next big release.
+**Example:** `feature/PNI-1792/add-users-model`
 
-The key moment to branch off a new release branch from develop is when…
+### One Branch per ticket
+* Cut a branch from last develop.
+* Do your commits.
+* Descriptive commit messages are encouraged.
 
-When the state of the release branch is ready to become a real release, some actions need to be carried out. First, the release branch is merged into develop. Next, you need to create a pull request from develop to master. Finally, after the pull request is merged into master, that commit on master must be tagged for easy future reference to this historical version.
+### One task, One PR, One commit to `develop`
+For each ticket you work on, there must be one PR and just one commit that will be eventually be merged into `develop`. Please squash your commits if necessary.
 
-#### Hotfix branches
+### Create Pull Request
+* Test the code.
+* Add a quick description to the PR summary.
+* Mark your PR to ready for review.
+* Make sure all build stages (linters, tests, etc.) are passing in the CI and that there are no conflicts.
+* Add any comments if you think some part of the code needs some more explanation.
 
-To master:
+### Merging Pull Request
+After you got the approval, **squash and merge** your pull request to `develop`.  The main purpose of squashing instead of merging into develop is to maintain a clean history in the important branches.
 
-May branch off from: master
-Must merge back into: develop and master
-Branch naming convention: `hotfix/*`
+***
 
-They arise from the necessity to act immediately upon an undesired state of a live production version. When a critical bug in a production version must be resolved immediately, a hotfix branch may be branched off from the corresponding tag on the master branch that marks the production version.
+## Bugfix Branches
 
-<img src="images/hotfix-branches@2x.png" width="316">
+Bugfix branches are used to implement bug fixes for upcoming releases. As soon as the fix is complete, it should be merged into `develop` branch.
 
-When finished, the bugfix needs to be merged back into master, but also needs to be merged back into develop, in order to safeguard that the bugfix is included in the next release as well. In order to merge the changes into master and develop you have to create 2 pull request, one for master and the other one to develop.
+Best Practices:
 
-To develop:
+* May branch off: develop
+* Must merge back into: develop
+* Branch naming convention: fix/[Issue TrackerId]/[short-description-of-the-bug]
 
-May branch off from: develop
-Must merge back into: develop
-Branch naming convention: `fix/<card_number>-*`
+**Example:** `fix/PNI-1793/fix-users-report`
+
+***
+
+## Hotfix Branches
+
+Hotfix branches are used to quickly patch releases. This is the only branch that should fork directly off of `main`. As soon as the fix is complete, it should be merged into `main` branch, and main should be tagged with an updated version number. A back-merge into `develop` should happen as well.
+
+Best Practices:
+
+* May branch off: main
+* Must merge back into: main
+* Tag: increment patch number
+* Branch naming convention: hotfix/[Issue TrackerId]/[short-description-of-the-bug]
+
+**Example:** `hotfix/PNI-1793/update-modal-styles`
+
+***
+
+## Release Branches
+
+Release branches support preparation of a new production release.
+
+X days before the release, do a code-freeze and cut a release branch from develop `release/v[Major].[Minor]`. This branch should only receive fixes for the release raised by QA. No new features are accepted after release branch is cut. A back-merge into `develop` should happen as well.
+
+* May branch off: develop
+* Must merge back: main
+* Branch naming convention: release/v[Major].[Minor]
+
+**Example:** `release/v2.1`
+
+***
+
+## Release Fix Branches
+
+Release Fix branches implement fixes raised by QA on release branches that have already been prepared.
+
+* May branch off: release branch
+* Must merge back: release branch
+* Branch naming convention: fix/[Issue TrackerId]/[short-description-of-the-bug]
+
+**Example:** `fix/PNI-1793/fix-users-report`
+
+Make sure to deploy latest release branch to staging after pushing a release fix branch.
+
+***
+
+## Release to Prod
+
+When QA gives the 👍 to the release branch, it is ready to be deployed to production.
+* Open a PR from `release/v[Major].[Minor]` to `main`.
+* Merge PR to main. **MERGE, DO NOT SQUASH** This way each commit/author is preserved in `main` history so that develop and `main` has not differed in those commits.
+
+Best Practices:
+
+* May branch off: develop
+* Must merge back into: main
+* Tag: increment major or minor number
+* Branch naming convention: release/v[Major].[Minor]
+
+**Example:** `release/v2.1`
+
+***
+
+## Summary
+
+| Supporting Branch Type | May Branch Off | Must Merge Back | Back-merge to Develop | Tag  | Merge Type     | Branch Naming Convention |
+|      :----:            |     :---:      |   :----:        |   :---:               | :--: | :---:          | :----:                   |
+| Feature                | develop        | develop         | ⛔                    | N/A  | Squash & Merge | feature/[Issue Tracker Id]/[short-description-of-the-task] |
+| Bugfix                 | develop        | develop         | ⛔                    | N/A  | Squash & Merge | fix/[Issue Tracker Id]/[short-description-of-the-bug] |
+| Hotfix                 | main           | main            | ✅                    | Increment patch number | Merge | hotfix/[Issue Tracker Id]/[short-description-of-the-bug] |
+| Release                | develop        | main            | ✅                    | Increment major or minor number | Merge | release/v[Major].[Minor] |
+| Release fix            | release        | release         | ⛔                    | N/A     | Squash & Merge | fix/[Issue Tracker Id]/[short-description-of-the-bug] |
