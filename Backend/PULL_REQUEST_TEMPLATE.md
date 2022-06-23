@@ -1,49 +1,57 @@
-<!-- `NAMING YOUR PULL REQUEST: Pull request should be named the same as ticket title with the ticket number. Ideally, pull request will have a name like this: [XXXX] My ticket title` -->
+> :warning: **This template contain descriptions of each of the sections with examples**  
+  Please read and follow them as much as needed for each PR.  
+  Place this template in `.github/pull_request_template.md` in the repository to be rendered as the default PR template for the project.  
+  Remove this quote session when adding this tempalte to the project.  
 
-## Description
+[Based on the Readme template defined in https://github.com/koombea/koombea_rails_best_practices/blob/develop/wiki/Sample%20PR%20Template.md]: text
+[Place this template in ".github/pull_request_template.md" in the repository to be rendered as the default PR template for the project]: text
+[Title: Add a brief description of the card developed, include the Card IDs related to the change]: text
+[Example: KOO-271 Add Soft deletion to Users]: text
 
-<!-- replace the following instruction -->
-_Please include a summary of the change and which issue is fixed. Please also include relevant motivation and context. List any dependencies that are required for this change._
+## Background
 
-If you need further information, please check the JIRA ticket [NUMBER HERE](LINK HERE) or feel free to contact me.
+### Associated Stories
+[Add a Link and a description of the tickets related to the this PR]: text
+[Example: Jira KOO-271 : Add active scope to user model(<link_to_Jira_ticket>)]: text
+* [Jira [KOO-000]: Title_of_the_card_worked](<link_to_Jira_ticket>)
 
-## Type of change
+### Overview
+[Describe the funcitonalities, fixes and improvements done in this PR]: text
+[Example: "Add deleted_at field to users, Add scope to get list of active users, etc"]: text
 
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] This change requires a documentation update
+* Funcitonality_description_1
+* Funcitonality_description_2
 
-## Checklist
+### Visual Documentation
+[Add Screenshot, GIFs or videos displaying the functionalities added]: text
+[Describe how these are related to the functionalities if needed]: text
+N/A
 
-- [ ] Rubocop applied <!-- remove this item if it is NOT a rails project -->
-- [ ] Rails best practices applied <!-- remove this item if it is NOT a rails project -->
-- [ ] My code follows the style guidelines of this project
-- [ ] I have performed a self-review of my own code
-- [ ] I have commented my code, particularly in hard-to-understand areas
-- [ ] I have made corresponding changes to the documentation <!-- ie. apiary, swagger, etc -->
-- [ ] My changes generate no new warnings
-- [ ] I have added tests/specs that prove my fix is effective or that my feature works
-- [ ] New and existing tests/specs pass locally with my changes
-- [ ] Any dependent changes have been merged or rebased
-- [ ] Request reviewers (they would love to see your code :policeman:)
-- [ ] Use labels (if applicable) <!-- ie: `migration`, `rake-task`, `hotfix` -->
-- [ ] Add seeds (if applicable)
+## Review
 
-## Screenshots or GIF (if appropriate) <!-- remove this item if the changes only affects the backend -->
+### QA Steps
+[Describe the step to reproduce the acceptance criteria of the card]: text
+[If needed, apply optional scenarios as well]: text
+[Example: "Open a console., Create user with deleted_at not nil., Check the user you just created is not in the list, etc"] : text
+* [ ] step_1
+* [ ] step_2
 
----
+## Deployment
 
-## QA/Deploy notes (if applicable)
+### Environment variables Changes
+[Describe the enviariables and or secrets that need to be added to the environments before or after the changes are deployed]: text
+[Provide the values of the vars unless the data is private, separate these between environments if needed]: text
+[Add the new env variable `USER_ACTIVE_SCOPE=true`]: text
+* [ ]  add_env_variable_1
+* [ ]  add_env_variable_2
 
-#### Deployment instructions
+### Non-Code Changes
+[Describe tasks that need to be run when the changes these changes are deployed to specific environments]: text
+[Example: "Run data migration to update inactive users's deleted_at `rake users:soft_delete_inactives` "]: text
+* [ ] Run_task_before_or_after_deploy_1
+* [ ] Run_task_before_or_after_deploy_2
 
-<!-- ie. `rake populate:users` -->
-
-#### New ENV variables
-
-<!-- ie. `AWS_S3_REGION`, `AWS_S3_ACCESS_KEY`, `AWS_S3_ACCESS_SECRET`, `AWS_S3_BUCKET_NAME` -->
-
-#### New/Updated/Removed endpoints (if applicable)
-
-<!-- ie. `GET /api/v1/users/:id` -->
+### Other Notes
+[Describe extra notes about accesses, credentials or users creation, or any other tasks not related to code itself]: text
+[Example: "I will need someone with access to the console to get this command run when this is deployed to prod."]: text
+* Other_note_1
